@@ -18,4 +18,9 @@ public class Engine {
         System.out.println("Hello, " + usrName + "!");
     }
 
+    public static void congratulations() {
+        if (Engine.count == 3) {
+            System.out.println("Congratulations," + Engine.usrName + "!");
+        }
+    }
 }
