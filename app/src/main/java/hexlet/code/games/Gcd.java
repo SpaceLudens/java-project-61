@@ -22,7 +22,7 @@ public class Gcd {
             int minNumber = Math.min(firstRandomNumber, secondRandomNumber);
             int maxNumber = Math.max(firstRandomNumber, secondRandomNumber);
 
-            System.out.println(firstRandomNumber + " " + secondRandomNumber + "\n Your answer: ");
+            System.out.println("Question: " + firstRandomNumber + " " + secondRandomNumber + "\n Your answer: ");
             int answer = scanner.nextInt();
 
             while (greep) {
@@ -51,9 +51,5 @@ public class Gcd {
 
             Engine.congratulations();
         }
-    }
-
-    public static void main(String[] args) {
-        Gcd.gsdGame();
     }
 }
