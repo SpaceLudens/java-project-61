@@ -17,17 +17,16 @@ public class Gcd {
         while (Engine.count < 3) {
             int firstRandomNumber = random.nextInt(1, 100);
             int secondRandomNumber = random.nextInt(1, 100);
-            int expressionResult = 0;
             boolean greep = true;
             int minNumber = Math.min(firstRandomNumber, secondRandomNumber);
             int maxNumber = Math.max(firstRandomNumber, secondRandomNumber);
 
-            System.out.println("Question: " + firstRandomNumber + " " + secondRandomNumber + "\n Your answer: ");
-            int answer = scanner.nextInt();
+            System.out.println("Question: " + firstRandomNumber + " " + secondRandomNumber + "\nYour answer: ");
+            Engine.answer = scanner.nextInt();
 
             while (greep) {
                 if (maxNumber % minNumber == 0) {
-                    expressionResult = minNumber;
+                    Engine.expressionResult = minNumber;
                     greep = false;
                 } else {
                     int remainder = maxNumber % minNumber;
@@ -40,12 +39,13 @@ public class Gcd {
                 }
             }
 
-            if (answer == expressionResult) {
+            if (Engine.answer == Engine.expressionResult) {
                 System.out.println("Correct!");
                 Engine.count++;
             } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;("
-                        + " Correct answer was" + "'" + expressionResult + "'" + ".");
+                System.out.println("'" + Engine.answer + "'" + " is wrong answer ;(."
+                        + " Correct answer was " + "'" + Engine.expressionResult + "'" + "."
+                        + "\nLet's try again, " + Engine.usrName + "!");
                 break;
             }
 

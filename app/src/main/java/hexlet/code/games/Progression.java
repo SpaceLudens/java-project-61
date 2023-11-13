@@ -10,13 +10,13 @@ public class Progression {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int[] array = new int[10];
+
         Engine.greeting();
 
         while (Engine.count < 3) {
             int firstRandomNumber = random.nextInt(100);
             int stepBetweenNumbers = random.nextInt(1, 10);
             int randomArrayNumber = random.nextInt(10);
-            int expressionResult = 0;
             array[0] = firstRandomNumber;
 
             for (int i = 1; i < array.length; i++) {
@@ -29,21 +29,21 @@ public class Progression {
 
             for (int i = 0; i < array.length; i++) {
                 if (i == randomArrayNumber) {
-                    expressionResult = array[i];
+                    Engine.expressionResult = array[i];
                     System.out.print(" " + "..");
                 } else {
                     System.out.print(" " + array[i]);
                 }
             }
             System.out.println("\nYour answer: ");
-            int answer = scanner.nextInt();
+            Engine.answer = scanner.nextInt();
 
-            if (answer == expressionResult) {
+            if (Engine.answer == Engine.expressionResult) {
                 System.out.println("Correct!");
                 Engine.count++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;("
-                                   + " Correct answer was " + "'" + expressionResult + "'" + ".");
+                System.out.println("'" + Engine.answer + "'" + " is wrong answer ;("
+                                   + " Correct answer was " + "'" + Engine.expressionResult + "'" + ".");
                 break;
             }
 

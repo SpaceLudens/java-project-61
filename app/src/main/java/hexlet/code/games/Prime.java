@@ -9,8 +9,8 @@ public class Prime {
     public static void primeGame() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        Engine.greeting();
 
+        Engine.greeting();
 
         while (Engine.count < 3) {
             int randomNumber = random.nextInt(1, 100);
@@ -25,26 +25,24 @@ public class Prime {
 
             System.out.println("Question: " + randomNumber + "\nYour answer: ");
 
-            String answer = scanner.nextLine();
+            Engine.yesOrNot = scanner.nextLine();
 
-            if (answer.equals("yes") && isPrimeNumber) {
+            if (Engine.yesOrNot.equals("yes") && isPrimeNumber) {
                 System.out.println("Correct!");
                 Engine.count++;
-            } else if (answer.equals("no") && !isPrimeNumber) {
-                System.out.println("Correct");
+            } else if (Engine.yesOrNot.equals("no") && !isPrimeNumber) {
+                System.out.println("Correct!");
                 Engine.count++;
-            } else if (answer.equals("yes")) {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + Engine.usrName + "!");
+            } else if (Engine.yesOrNot.equals("yes")) {
+                System.out.println("'" + Engine.yesOrNot + "'" + " is wrong answer ;(. Correct answer was 'no'."
+                        + "\nLet's try again, " + Engine.usrName + "!");
                 break;
-            } else if (answer.equals("no")) {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + Engine.usrName + "!");
+            } else if (Engine.yesOrNot.equals("no")) {
+                System.out.println("'" + Engine.yesOrNot + "'" + " is wrong answer ;(. Correct answer was 'yes'."
+                        + "\nLet's try again, " + Engine.usrName + "!");
                 break;
             }
-
             Engine.congratulations();
-
         }
     }
 }

@@ -5,10 +5,9 @@ import java.util.Scanner;
 public class Engine {
     public static int count = 0;
     public static String usrName;
-
-
-
-
+    public static int answer;
+    public static String yesOrNot;
+    public static int expressionResult;
     public static void greeting() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
