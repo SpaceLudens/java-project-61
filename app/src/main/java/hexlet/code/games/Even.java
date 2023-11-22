@@ -1,46 +1,18 @@
 
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-import hexlet.code.Game;
+import static hexlet.code.Engine.question;
+import static hexlet.code.Engine.userAnswer;
 
-import java.util.Random;
-import java.util.Scanner;
-
-public class Even implements Game {
-    static Scanner scanner = new Scanner(System.in);
-    static Even even = new Even();
-    static Random random = new Random();
-    public static boolean swap = true;
-    public static int roundCount = 0;
-
-    public static void main(String[] args) {
-        Game game = new Game() {
-            public static void game() {
-                int randomNumber = random.nextInt(1,100);
-                boolean isEven = randomNumber % 2 == 0;
-                System.out.println("Question: " + randomNumber);
-                System.out.print("Your answer: ");
-                String answer = scanner.nextLine();
-                if (answer.equals("yes") && isEven) {
-                    System.out.println("Correct!");
-                    roundCount++;
-                } else if (answer.equals("no") && !isEven) {
-                    System.out.println("Correct!");
-                    roundCount++;
-                } else if (answer.equals("no")) {
-                    System.out.println(" 'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
-                            "Let's try again, " + Engine.name + "!");
-                    //break;
-                } else if (answer.equals("yes")) {
-                    System.out.println(" 'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
-                            "Let's try again, " + Engine.name + "!");
-                    //break;
-                }
-
-            }
-        };
-        Engine.gameLauncher(1, game);
+public class Even {
+    public static void game() {
+        for (int i = 0; i < 3; i++) {
+            int randomNumber = Engine.getRandomNumber(1, 100);
+            question[i] = Integer.toString(randomNumber);
+            userAnswer[i] = randomNumber % 2 == 0 ? "yes" : "no";
+        }
+        Engine.gameLauncher(0, question, userAnswer);
     }
+
 }
