@@ -5,21 +5,22 @@ import static hexlet.code.Engine.*;
 public class Progression {
 
     public static void game() {
-        for (int i = 0; i < 3; i++) {
-            StringBuilder str = new StringBuilder(" ");
-            int firstArrayNumber = getRandomNumber(1, 100);
-            int stepBetweenNumbers = getRandomNumber(1, 5);
-            int randomArrayIndex = getRandomNumber(0, 9);
+        for (int i = 0; i < roundsCount; i++) {
 
-            for (int j = 0; j < 9; j++) {
-                if (j == randomArrayIndex) {
-                    result[i] = String.valueOf(firstArrayNumber + stepBetweenNumbers);
+            StringBuilder str = new StringBuilder(" ");
+            int firstRandomNumber = getRandomNumber(1, 100);
+            int stepBetweenNumbers = getRandomNumber(1, 5);
+            int randomSkippedNumber = getRandomNumber(0, 10);
+            int StringLength = 10;
+
+            for (int j = 0; j < StringLength; j++) {
+                if (j == randomSkippedNumber) {
+                    result[i] = String.valueOf(firstRandomNumber + stepBetweenNumbers);
                     str.append(".." + " ");
-                    firstArrayNumber = firstArrayNumber + stepBetweenNumbers;
                 } else {
-                    str.append(firstArrayNumber + stepBetweenNumbers).append(" ");
-                    firstArrayNumber = firstArrayNumber + stepBetweenNumbers;
+                    str.append(firstRandomNumber + stepBetweenNumbers).append(" ");
                 }
+                firstRandomNumber = firstRandomNumber + stepBetweenNumbers;
             }
             question[i] = str.toString();
         }

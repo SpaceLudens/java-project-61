@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static String name;
+    public static int roundsCount = 3;
     public static String[] question = new String[3];
     public static String[] result = new String[3];
     static Scanner scanner = new Scanner(System.in);
