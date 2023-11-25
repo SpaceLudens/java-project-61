@@ -6,14 +6,17 @@ import java.util.Scanner;
 public class Engine {
     public static String name;
     public static String[] question = new String[3];
-    public static String[] userAnswer = new String[3];
+    public static String[] result = new String[3];
     static Scanner scanner = new Scanner(System.in);
     public static boolean swap = true;
     public static int count = 0;
     public static int swapCount = 0;
     public static String gamesRules(int gameNumber) {
-        String[] gamesRules = {"Answer 'yes' if the number is even, otherwise answer 'no'.",
-                "What is the result of the expression?"};
+        String[] gamesRules = {
+                "Answer 'yes' if the number is even, otherwise answer 'no'.",
+                "What is the result of the expression?",
+                "Find the greatest common divisor of given numbers.",
+                "What number is missing in the progression?"};
         return gamesRules[gameNumber];
     }
 
