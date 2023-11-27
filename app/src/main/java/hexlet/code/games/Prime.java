@@ -14,13 +14,12 @@ public class Prime {
             int randomNumber = getRandomNumber(1, 100);
             question[i] = String.valueOf(randomNumber);
 
-            for (int j = 2; j <= randomNumber; j++) {
-                if (randomNumber % j == 0 && j != randomNumber) {
+            for (int j = 2; j <= randomNumber / 2; j++) {
+                if (randomNumber % j == 0) {
                     result[i] = "no";
                     break;
-                } else if (randomNumber % j == 0 && j == randomNumber) {
+                } else {
                     result[i] = "yes";
-                    break;
                 }
             }
         }
