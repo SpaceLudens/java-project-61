@@ -11,23 +11,22 @@ public class Engine {
     public static String[] result = new String[roundsCount];
     static Scanner scanner = new Scanner(System.in);
     public static boolean swap = true;
-    public static int count = 0;
 
     public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
         Cli.acquaintance();
         System.out.println(gamesRules(gameRulesNumber));
-        while (count < roundsCount) {
-            System.out.println("Question: " + question[count] + "\n Your answer: \n");
+        for (int i = 0; i < roundsCount;) {
+            System.out.print("Question: " + question[i] + "\nYour answer: ");
             var answer = scanner.next();
-            if (answer.equals(userAnswer[count])) {
+            if (answer.equals(userAnswer[i])) {
                 System.out.println("Correct!");
-                count ++;
+                i ++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
-                        + userAnswer[count] + "'." + " Let's try again, " + name + "!");
+                        + userAnswer[i] + "'." + " Let's try again, " + name + "!");
                 break;
             }
-            if(count == roundsCount) {
+            if(i == roundsCount) {
                 System.out.println("Congratulations, " + name + "!");
             }
         }
