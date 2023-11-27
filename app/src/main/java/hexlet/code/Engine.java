@@ -11,7 +11,6 @@ public class Engine {
     static Scanner scanner = new Scanner(System.in);
     public static boolean swap = true;
     public static int count = 0;
-    public static int swapCount = 0;
     public static String gamesRules(int gameNumber) {
         String[] gamesRules = {
                 "Answer 'yes' if the number is even, otherwise answer 'no'.",
@@ -31,23 +30,21 @@ public class Engine {
     public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
         Cli.acquaintance();
         System.out.println(gamesRules(gameRulesNumber));
-        while (swap) {
+        while (count < 3) {
             System.out.println("Question: " + question[count]);
             System.out.print("Your answer: ");
             var answer = scanner.next();
 
             if (answer.equals(userAnswer[count])) {
                 System.out.println("Correct!");
-                swapCount++;
                 count ++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
                         + userAnswer[count] + "'." + " Let's try again, " + name + "!");
                 break;
             }
-            if(swapCount == 3) {
+            if(count == 3) {
                 System.out.println("Congratulations, " + name + "!");
-                swap = false;
             }
         }
     }

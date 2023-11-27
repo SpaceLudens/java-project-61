@@ -7,8 +7,8 @@ public class GCD {
     public static void game() {
         for (int i = 0; i < roundsCount; i++) {
 
-            int firstRandomNumber = getRandomNumber(1,10);
-            int secondRandomNumber =getRandomNumber(1,10);
+            int firstRandomNumber = getRandomNumber(1,100);
+            int secondRandomNumber =getRandomNumber(1,100);
             int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
             int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
             int remainder;

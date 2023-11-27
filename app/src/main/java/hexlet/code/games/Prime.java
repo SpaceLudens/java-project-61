@@ -7,7 +7,7 @@ public class Prime {
 
         for (int i = 0; i < roundsCount; i++) {
 
-            int randomNumber = getRandomNumber(1,10);
+            int randomNumber = getRandomNumber(1,100);
             question[i] = String.valueOf(randomNumber);
 
             for (int j = 2; j <= randomNumber ; j++) {

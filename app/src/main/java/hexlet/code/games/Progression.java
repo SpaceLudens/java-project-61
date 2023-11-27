@@ -26,8 +26,4 @@ public class Progression {
         }
         gameLauncher(3, question, result);
     }
-
-    public static void main(String[] args) {
-        game();
-    }
 }
