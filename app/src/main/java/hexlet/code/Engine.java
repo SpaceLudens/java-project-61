@@ -13,10 +13,6 @@ public class Engine {
     public static boolean swap = true;
     public static int count = 0;
 
-
-
-
-
     public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
         Cli.acquaintance();
         System.out.println(gamesRules(gameRulesNumber));
