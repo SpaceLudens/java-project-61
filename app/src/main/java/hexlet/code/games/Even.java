@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.*;
+import static hexlet.code.RandomNumbers.*;
+
 public class Even {
     public static void game() {
         for (int i = 0; i < roundsCount; i++) {
