@@ -17,10 +17,8 @@ public class Engine {
         Cli.acquaintance();
         System.out.println(gamesRules(gameRulesNumber));
         while (count < roundsCount) {
-            System.out.println("Question: " + question[count]);
-            System.out.print("Your answer: ");
+            System.out.println("Question: " + question[count] + "\n Your answer: \n");
             var answer = scanner.next();
-
             if (answer.equals(userAnswer[count])) {
                 System.out.println("Correct!");
                 count ++;
