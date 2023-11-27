@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.GameRules.*;
+import static hexlet.code.GameRules.gamesRules;
 
 public class Engine {
     public static String name;
@@ -20,18 +20,19 @@ public class Engine {
             var answer = scanner.next();
             if (answer.equals(userAnswer[i])) {
                 System.out.println("Correct!");
-                i ++;
+                i++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
                         + userAnswer[i] + "'." + " Let's try again, " + name + "!");
                 break;
             }
-            if(i == roundsCount) {
+            if (i == roundsCount) {
                 System.out.println("Congratulations, " + name + "!");
             }
         }
     }
 }
+
 
 
 
