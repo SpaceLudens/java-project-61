@@ -14,17 +14,17 @@ public class Calc {
             int secondRandomNumber = getRandomNumber(1, 100);
             switch (rand) {
                 case (1): {
-                    question[i] = firstRandomNumber + "+" + secondRandomNumber;
+                    question[i] = firstRandomNumber + " + " + secondRandomNumber;
                     result[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
                     break;
                 }
                 case (2): {
-                    question[i] = firstRandomNumber + "-" + secondRandomNumber;
+                    question[i] = firstRandomNumber + " - " + secondRandomNumber;
                     result[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
                     break;
                 }
                 case (3): {
-                    question[i] = firstRandomNumber + "*" + secondRandomNumber;
+                    question[i] = firstRandomNumber + " * " + secondRandomNumber;
                     result[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
                     break;
                 }
