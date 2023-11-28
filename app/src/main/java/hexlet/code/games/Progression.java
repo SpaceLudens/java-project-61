@@ -10,7 +10,6 @@ public class Progression {
 
     public static void game() {
         for (int i = 0; i < roundsCount; i++) {
-
             StringBuilder str = new StringBuilder();
             int firstRandomNumber = getRandomNumber(1, 100);
             int stepBetweenNumbers = getRandomNumber(1, 5);
