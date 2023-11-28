@@ -27,26 +27,14 @@ public class App {
         int gameNumber = scanner.nextInt();
 
         switch (gameNumber) {
-            case (1):
-                Cli.acquaintance();
-                break;
-            case (2):
-                Even.game();
-                break;
-            case (3):
-                Calc.game();
-                break;
-            case(4):
-                GCD.game();
-                break;
-            case (5):
-                Progression.game();
-                break;
-            case (6):
-                Prime.game();
-                break;
-            default:
-                break;
+            case 1 -> Cli.acquaintance();
+            case 2 -> Even.game();
+            case 3 -> Calc.game();
+            case 4 -> GCD.game();
+            case 5 -> Progression.game();
+            case 6 -> Prime.game();
+            default -> {
+            }
         }
     }
 }

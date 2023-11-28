@@ -12,25 +12,15 @@ public class Calc {
             int rand = getRandomNumber(1, 4);
             int firstRandomNumber = getRandomNumber(1, 100);
             int secondRandomNumber = getRandomNumber(1, 100);
-            switch (rand) {
-                case (1): {
-                    question[i] = firstRandomNumber + " + " + secondRandomNumber;
-                    result[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
-                    break;
-                }
-                case (2): {
-                    question[i] = firstRandomNumber + " - " + secondRandomNumber;
-                    result[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
-                    break;
-                }
-                case (3): {
-                    question[i] = firstRandomNumber + " * " + secondRandomNumber;
-                    result[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
-                    break;
-                }
-                default: {
-
-                }
+            if (rand == 1) {
+                question[i] = firstRandomNumber + " + " + secondRandomNumber;
+                result[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
+            } else if (rand == 2) {
+                question[i] = firstRandomNumber + " - " + secondRandomNumber;
+                result[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
+            } else if (rand == 3) {
+                question[i] = firstRandomNumber + " * " + secondRandomNumber;
+                result[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
             }
         }
         gameLauncher(1, question, result);
