@@ -2,8 +2,8 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Engine.getNAME;
-import static hexlet.code.Engine.setNAME;
+import static hexlet.code.Engine.getUserName;
+import static hexlet.code.Engine.setUserName;
 
 public class Cli {
 
@@ -12,7 +12,7 @@ public class Cli {
         System.out.print("""
                 Welcome to the Brain Games!
                 May I have your name?\s""");
-        setNAME(scanner.nextLine());
-        System.out.println("Hello, " + getNAME() + "!");
+        setUserName(scanner.nextLine());
+        System.out.println("Hello, " + getUserName() + "!");
     }
 }

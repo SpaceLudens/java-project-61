@@ -4,7 +4,7 @@ import static hexlet.code.App.THIRDGAME;
 import static hexlet.code.Engine.getQuestion;
 import static hexlet.code.Engine.getResult;
 import static hexlet.code.Engine.gameLauncher;
-import static hexlet.code.Engine.getRoundscount;
+import static hexlet.code.Engine.getRoundsCount;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER5;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER10;
@@ -14,7 +14,7 @@ import static hexlet.code.RandomNumbers.getRandomNumber;
 public class Progression {
 public static final int STRINGLENGTH = 10;
     public static void game() {
-        for (int i = 0; i < getRoundscount(); i++) {
+        for (int i = 0; i < getRoundsCount(); i++) {
             StringBuilder str = new StringBuilder();
             int firstRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             int stepBetweenNumbers = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER5);

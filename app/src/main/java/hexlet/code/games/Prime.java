@@ -4,7 +4,7 @@ import static hexlet.code.App.FOURTHGAME;
 import static hexlet.code.Engine.getQuestion;
 import static hexlet.code.Engine.getResult;
 import static hexlet.code.Engine.gameLauncher;
-import static hexlet.code.Engine.getRoundscount;
+import static hexlet.code.Engine.getRoundsCount;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
@@ -12,7 +12,7 @@ import static hexlet.code.RandomNumbers.getRandomNumber;
 public class Prime {
     public static void game() {
 
-        for (int i = 0; i < getRoundscount(); i++) {
+        for (int i = 0; i < getRoundsCount(); i++) {
 
             int randomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             getQuestion()[i] = String.valueOf(randomNumber);

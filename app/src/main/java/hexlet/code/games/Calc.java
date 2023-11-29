@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.getRoundscount;
+import static hexlet.code.Engine.getRoundsCount;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER4;
 import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
@@ -14,7 +14,7 @@ public class Calc {
     private static final int GAMEVAR2 = 2;
     private static final int GAMEVAR3 = 3;
     public static void game() {
-        for (int i = 0; i < getRoundscount(); i++) {
+        for (int i = 0; i < getRoundsCount(); i++) {
             int rand = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER4);
             int firstRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             int secondRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
