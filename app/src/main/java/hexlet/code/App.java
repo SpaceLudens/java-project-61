@@ -11,6 +11,12 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
+    public static final int firstGame = 1;
+    public static final int secondGame = 2;
+    public static final int thirdGame = 3;
+    public static final int fourthGame = 4;
+    public static final int fifthGame = 5;
+    public static final int sixthGame = 6;
     public static void main(String[] args) {
         System.out.print("""
                 Please enter the game number and press Enter.
@@ -27,12 +33,12 @@ public class App {
         int gameNumber = scanner.nextInt();
 
         switch (gameNumber) {
-            case 1 -> Cli.acquaintance();
-            case 2 -> Even.game();
-            case 3 -> Calc.game();
-            case 4 -> GCD.game();
-            case 5 -> Progression.game();
-            case 6 -> Prime.game();
+            case firstGame -> Cli.acquaintance();
+            case secondGame -> Even.game();
+            case thirdGame -> Calc.game();
+            case fourthGame -> GCD.game();
+            case fifthGame -> Progression.game();
+            case sixthGame -> Prime.game();
             default -> {
             }
         }
