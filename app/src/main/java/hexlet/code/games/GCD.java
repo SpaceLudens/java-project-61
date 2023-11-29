@@ -1,6 +1,11 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.getQuestion;
+import static hexlet.code.Engine.getResult;
+import static hexlet.code.Engine.gameLauncher;
+import static hexlet.code.Engine.roundsCount;
+import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
+import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class GCD {

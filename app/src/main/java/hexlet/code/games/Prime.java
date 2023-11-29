@@ -1,6 +1,11 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.getQuestion;
+import static hexlet.code.Engine.getResult;
+import static hexlet.code.Engine.gameLauncher;
+import static hexlet.code.Engine.roundsCount;
+import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
+import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Prime {
@@ -25,9 +30,5 @@ public class Prime {
             }
         }
         gameLauncher(4, getQuestion(), getResult());
-    }
-
-    public static void main(String[] args) {
-        game();
     }
 }
