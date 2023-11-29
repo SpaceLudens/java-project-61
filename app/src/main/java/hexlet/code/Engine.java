@@ -5,7 +5,7 @@ import java.util.Scanner;
 import static hexlet.code.GameRules.gamesRules;
 
 public class Engine {
-    private static String USERNAME;
+    private static String username;
     private static final int ROUNDSCOUNT = 3;
     private static final String[] QUESTION = new String[getRoundscount()];
     private static final String[] RESULT = new String[getRoundscount()];
@@ -46,10 +46,10 @@ public class Engine {
     }
 
     public static void setNAME(String NAME) {
-        Engine.USERNAME = NAME;
+        Engine.username = NAME;
     }
     public static String getNAME() {
-        return USERNAME;
+        return username;
     }
     public static int getRoundscount() {
         return ROUNDSCOUNT;
