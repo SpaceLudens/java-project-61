@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import static hexlet.code.App.THIRDGAME;
 import static hexlet.code.Engine.*;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
@@ -24,6 +25,6 @@ public class Progression {
             }
             question[i] = str.toString();
         }
-        gameLauncher(3, question, result);
+        gameLauncher(THIRDGAME, question, result);
     }
 }
