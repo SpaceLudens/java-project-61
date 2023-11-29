@@ -10,16 +10,16 @@ public class Calc {
             int firstRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             int secondRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             if (rand == 1) {
-                question[i] = firstRandomNumber + " + " + secondRandomNumber;
-                result[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
+                getQuestion()[i] = firstRandomNumber + " + " + secondRandomNumber;
+                getResult()[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
             } else if (rand == 2) {
-                question[i] = firstRandomNumber + " - " + secondRandomNumber;
-                result[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
+                getQuestion()[i] = firstRandomNumber + " - " + secondRandomNumber;
+                getResult()[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
             } else if (rand == 3) {
-                question[i] = firstRandomNumber + " * " + secondRandomNumber;
-                result[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
+                getQuestion()[i] = firstRandomNumber + " * " + secondRandomNumber;
+                getResult()[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
             }
         }
-        gameLauncher(1, question, result);
+        gameLauncher(1, getQuestion(), getResult());
     }
 }

@@ -9,9 +9,9 @@ public class Even {
     public static void game() {
         for (int i = 0; i < roundsCount; i++) {
             int randomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER10);
-            Engine.question[i] = Integer.toString(randomNumber);
-            Engine.result[i] = randomNumber % 2 == 0 ? "yes" : "no";
+            Engine.getQuestion()[i] = Integer.toString(randomNumber);
+            Engine.getResult()[i] = randomNumber % 2 == 0 ? "yes" : "no";
         }
-        gameLauncher(0, question, result);
+        gameLauncher(0, getQuestion(), getResult());
     }
 }

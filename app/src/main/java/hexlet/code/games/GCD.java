@@ -13,12 +13,12 @@ public class GCD {
             int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
             int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
             int remainder;
-            swap = true;
+            boolean swap = true;
 
             while (swap) {
                 if (largerNumber % lowerNumber == 0) {
-                    question[i] = firstRandomNumber + " " + secondRandomNumber;
-                    result[i] = String.valueOf(lowerNumber);
+                    getQuestion()[i] = firstRandomNumber + " " + secondRandomNumber;
+                    getResult()[i] = String.valueOf(lowerNumber);
                     swap = false;
                 } else {
                     remainder = largerNumber % lowerNumber;
@@ -27,6 +27,6 @@ public class GCD {
                 }
             }
         }
-        gameLauncher(2, question, result);
+        gameLauncher(2, getQuestion(), getResult());
     }
 }
