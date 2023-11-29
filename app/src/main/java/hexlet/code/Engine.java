@@ -11,6 +11,10 @@ public class Engine {
     public static String[] result = new String[roundsCount];
     static Scanner scanner = new Scanner(System.in);
     public static boolean swap = true;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER1 = 1;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER4 = 4;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER100 = 100;
+
 
     public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
         Cli.acquaintance();
