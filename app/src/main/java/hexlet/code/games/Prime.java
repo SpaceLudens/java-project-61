@@ -1,9 +1,6 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.question;
-import static hexlet.code.Engine.roundsCount;
-import static hexlet.code.Engine.result;
-import static hexlet.code.Engine.gameLauncher;
+import static hexlet.code.Engine.*;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Prime {
@@ -11,7 +8,7 @@ public class Prime {
 
         for (int i = 0; i < roundsCount; i++) {
 
-            int randomNumber = getRandomNumber(1, 100);
+            int randomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
             question[i] = String.valueOf(randomNumber);
 
             if (randomNumber < 2) {

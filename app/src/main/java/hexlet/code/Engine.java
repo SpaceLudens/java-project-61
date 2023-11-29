@@ -12,7 +12,10 @@ public class Engine {
     static Scanner scanner = new Scanner(System.in);
     public static boolean swap = true;
     public static final int NUMBERTOGENERATEARANDOMNUMBER1 = 1;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER3 = 3;
     public static final int NUMBERTOGENERATEARANDOMNUMBER4 = 4;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER5 = 5;
+    public static final int NUMBERTOGENERATEARANDOMNUMBER10 = 10;
     public static final int NUMBERTOGENERATEARANDOMNUMBER100 = 100;
 
 
