@@ -5,13 +5,12 @@ import java.util.Scanner;
 import static hexlet.code.GameRules.gamesRules;
 
 public class Engine {
-    public static String name;
-    public static int roundsCount = 3;
-    private static final String[] QUESTION = new String[roundsCount];
-    private static final String[] RESULT = new String[roundsCount];
+    private static String NAME;
+    private static final int ROUNDSCOUNT = 3;
+    private static final String[] QUESTION = new String[getRoundscount()];
+    private static final String[] RESULT = new String[getRoundscount()];
     private static final Scanner SCANNER = new Scanner(System.in);
     public static final int NUMBERTOGENERATEARANDOMNUMBER1 = 1;
-    public static final int NUMBERTOGENERATEARANDOMNUMBER3 = 3;
     public static final int NUMBERTOGENERATEARANDOMNUMBER4 = 4;
     public static final int NUMBERTOGENERATEARANDOMNUMBER5 = 5;
     public static final int NUMBERTOGENERATEARANDOMNUMBER10 = 10;
@@ -21,7 +20,7 @@ public class Engine {
     public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
         Cli.acquaintance();
         System.out.println(gamesRules(gameRulesNumber));
-        for (int i = 0; i < roundsCount;) {
+        for (int i = 0; i < getRoundscount();) {
             System.out.print("Question: " + question[i] + "\nYour answer: ");
             var answer = SCANNER.next();
             if (answer.equals(userAnswer[i])) {
@@ -29,11 +28,11 @@ public class Engine {
                 i++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
-                        + userAnswer[i] + "'." + " Let's try again, " + name + "!");
+                        + userAnswer[i] + "'." + " Let's try again, " + NAME + "!");
                 break;
             }
-            if (i == roundsCount) {
-                System.out.println("Congratulations, " + name + "!");
+            if (i == getRoundscount()) {
+                System.out.println("Congratulations, " + NAME + "!");
             }
         }
     }
@@ -44,6 +43,16 @@ public class Engine {
 
     public static String[] getResult() {
         return RESULT;
+    }
+
+    public static void setNAME(String NAME) {
+        Engine.NAME = NAME;
+    }
+    public static String getNAME() {
+        return NAME;
+    }
+    public static int getRoundscount() {
+        return ROUNDSCOUNT;
     }
 }
 

@@ -1,6 +1,10 @@
 package hexlet.code;
 
 import java.util.Scanner;
+
+import static hexlet.code.Engine.getNAME;
+import static hexlet.code.Engine.setNAME;
+
 public class Cli {
 
     public static void acquaintance() {
@@ -8,7 +12,7 @@ public class Cli {
         System.out.print("""
                 Welcome to the Brain Games!
                 May I have your name?\s""");
-        Engine.name = scanner.nextLine();
-        System.out.println("Hello, " + Engine.name + "!");
+        setNAME(scanner.nextLine());
+        System.out.println("Hello, " + getNAME() + "!");
     }
 }
