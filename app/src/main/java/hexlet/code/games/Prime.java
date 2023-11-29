@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import static hexlet.code.App.FOURTHGAME;
 import static hexlet.code.Engine.getQuestion;
 import static hexlet.code.Engine.getResult;
 import static hexlet.code.Engine.gameLauncher;
@@ -29,6 +30,6 @@ public class Prime {
                 }
             }
         }
-        gameLauncher(4, getQuestion(), getResult());
+        gameLauncher(FOURTHGAME, getQuestion(), getResult());
     }
 }
