@@ -4,17 +4,17 @@ import static hexlet.code.Engine.getQuestion;
 import static hexlet.code.Engine.getResult;
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
-import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class GCD {
-
+    private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
 
-            int firstRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
-            int secondRandomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
+            int firstRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int secondRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
             int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
             int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
             int remainder;
@@ -32,6 +32,6 @@ public class GCD {
                 }
             }
         }
-        gameLauncher(2, getQuestion(), getResult());
+        gameLauncher(GAME_RULE, getQuestion(), getResult());
     }
 }

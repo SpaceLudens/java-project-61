@@ -2,24 +2,23 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.GameRules.gamesRules;
 
 public class Engine {
     private static String username;
-    private static final int ROUNDSCOUNT = 3;
+    private static final int ROUNDS_COUNT = 3;
     private static final String[] QUESTION = new String[getRoundsCount()];
     private static final String[] RESULT = new String[getRoundsCount()];
     private static final Scanner SCANNER = new Scanner(System.in);
-    public static final int NUMBERTOGENERATEARANDOMNUMBER1 = 1;
-    public static final int NUMBERTOGENERATEARANDOMNUMBER4 = 4;
-    public static final int NUMBERTOGENERATEARANDOMNUMBER5 = 5;
-    public static final int NUMBERTOGENERATEARANDOMNUMBER10 = 10;
-    public static final int NUMBERTOGENERATEARANDOMNUMBER100 = 100;
+    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1 = 1;
+    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_4 = 4;
+    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5 = 5;
+    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_10 = 10;
+    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100 = 100;
 
 
-    public static void gameLauncher(int gameRulesNumber, String[] question, String[] userAnswer) {
+    public static void gameLauncher(String gameRule, String[] question, String[] userAnswer) {
         Cli.acquaintance();
-        System.out.println(gamesRules(gameRulesNumber));
+        System.out.println(gameRule);
         for (int i = 0; i < getRoundsCount();) {
             System.out.print("Question: " + question[i] + "\nYour answer: ");
             var answer = SCANNER.next();
@@ -52,7 +51,7 @@ public class Engine {
         return username;
     }
     public static int getRoundsCount() {
-        return ROUNDSCOUNT;
+        return ROUNDS_COUNT;
     }
 }
 

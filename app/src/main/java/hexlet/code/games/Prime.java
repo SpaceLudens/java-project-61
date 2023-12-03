@@ -1,35 +1,47 @@
 package hexlet.code.games;
 
-import static hexlet.code.App.FOURTHGAME;
 import static hexlet.code.Engine.getQuestion;
 import static hexlet.code.Engine.getResult;
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER1;
-import static hexlet.code.Engine.NUMBERTOGENERATEARANDOMNUMBER100;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Prime {
-    public static void game() {
+    private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String[] questions = new String[getRoundsCount()];
+    private static  String[] correctAnswers = new String[getRoundsCount()];
+    public static boolean isPrime(int number) {
+        boolean isPrime = false;
+        if (number < 2) {
+            return false;
+        }
 
-        for (int i = 0; i < getRoundsCount(); i++) {
-
-            int randomNumber = getRandomNumber(NUMBERTOGENERATEARANDOMNUMBER1, NUMBERTOGENERATEARANDOMNUMBER100);
-            getQuestion()[i] = String.valueOf(randomNumber);
-
-            if (randomNumber < 2) {
-                getResult()[i] = "no";
-            }
-
-            for (int j = 2; j <= randomNumber; j++) {
-                if (randomNumber % j == 0 && randomNumber != j) {
-                    getResult()[i] = "no";
-                    break;
-                } else {
-                    getResult()[i] = "yes";
-                }
+        for (int j = 2; j <= number; j++) {
+            if (number % j == 0 && number != j) {
+                isPrime = false;
+                break;
+            } else {
+                isPrime = true;
             }
         }
-        gameLauncher(FOURTHGAME, getQuestion(), getResult());
+        return isPrime;
+    }
+    public static void game() {
+        for (int i = 0; i < getRoundsCount(); i++) {
+            int randomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            getQuestions()[i] = String.valueOf(randomNumber);
+            getCorrectAnswers()[i] = isPrime(randomNumber) ? "yes" : "no";
+        }
+        gameLauncher(GAME_RULE, getQuestions(), getCorrectAnswers());
+    }
+
+    public static String[] getQuestions() {
+        return questions;
+    }
+
+    public static String[] getCorrectAnswers() {
+        return correctAnswers;
     }
 }
