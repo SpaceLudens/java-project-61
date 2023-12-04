@@ -35,8 +35,10 @@ public class GCD {
     }
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
-            int firstRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
-            int secondRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int firstRandomNumber
+                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int secondRandomNumber
+                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
             int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
             int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
             getQuestions()[i] = firstRandomNumber + " " + secondRandomNumber;

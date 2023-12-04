@@ -1,6 +1,9 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.getRoundsCount;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1;
+import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100;
+import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Even {

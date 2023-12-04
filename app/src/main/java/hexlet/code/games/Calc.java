@@ -25,8 +25,10 @@ public class Calc {
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
             int rand = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_4);
-            int firstRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
-            int secondRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int firstRandomNumber =
+                    getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int secondRandomNumber =
+                    getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
             if (rand == VAR_1) {
                 getQuestions()[i] = firstRandomNumber + " + " + secondRandomNumber;
                 getCorrectAnswers()[i] = String.valueOf(firstRandomNumber + secondRandomNumber);

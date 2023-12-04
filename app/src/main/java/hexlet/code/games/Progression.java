@@ -24,8 +24,10 @@ public class Progression {
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
             StringBuilder str = new StringBuilder();
-            int firstRandomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
-            int stepBetweenNumbers = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5);
+            int firstRandomNumber
+                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int stepBetweenNumbers
+                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5);
             int randomSkippedNumber = getRandomNumber(0, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_10);
 
             for (int j = 0; j < STRING_LENGTH; j++) {

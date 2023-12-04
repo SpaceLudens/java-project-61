@@ -28,7 +28,8 @@ public class Prime {
     }
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
-            int randomNumber = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int randomNumber
+                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
             getQuestions()[i] = String.valueOf(randomNumber);
             getCorrectAnswers()[i] = isPrime(randomNumber) ? "yes" : "no";
         }
