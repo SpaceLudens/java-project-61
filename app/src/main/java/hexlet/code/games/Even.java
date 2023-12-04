@@ -18,8 +18,7 @@ public class Even {
         return CORRECT_ANSWERS;
     }
     public static boolean isEven(int number) {
-        boolean isEven = false;
-        return isEven = number % 2 == 0;
+        return number % 2 == 0;
     }
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
