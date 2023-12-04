@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_4;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_1;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_4;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_100;
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
@@ -24,11 +24,9 @@ public class Calc {
 
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
-            int rand = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_4);
-            int firstRandomNumber =
-                    getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
-            int secondRandomNumber =
-                    getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
+            int rand = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_4);
+            int firstRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
+            int secondRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
             if (rand == VAR_1) {
                 getQuestions()[i] = firstRandomNumber + " + " + secondRandomNumber;
                 getCorrectAnswers()[i] = String.valueOf(firstRandomNumber + secondRandomNumber);

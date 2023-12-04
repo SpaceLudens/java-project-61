@@ -7,11 +7,11 @@ public class Engine {
     private static String username;
     private static final int ROUNDS_COUNT = 3;
     private static final Scanner SCANNER = new Scanner(System.in);
-    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1 = 1;
-    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_4 = 4;
-    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5 = 5;
-    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_10 = 10;
-    public static final int NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100 = 100;
+    public static final int GENERATE_A_RANDOM_NUMBER_1 = 1;
+    public static final int GENERATE_A_RANDOM_NUMBER_4 = 4;
+    public static final int GENERATE_A_RANDOM_NUMBER_5 = 5;
+    public static final int GENERATE_A_RANDOM_NUMBER_10 = 10;
+    public static final int GENERATE_A_RANDOM_NUMBER_100 = 100;
 
 
     public static void gameLauncher(String gameRule, String[] question, String[] userAnswer) {

@@ -2,10 +2,10 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_10;
-import static hexlet.code.Engine.NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_1;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_5;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_10;
+import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Progression {
@@ -24,11 +24,9 @@ public class Progression {
     public static void game() {
         for (int i = 0; i < getRoundsCount(); i++) {
             StringBuilder str = new StringBuilder();
-            int firstRandomNumber
-                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_100);
-            int stepBetweenNumbers
-                    = getRandomNumber(NUMBER_TO_GENERATE_A_RANDOM_NUMBER_1, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_5);
-            int randomSkippedNumber = getRandomNumber(0, NUMBER_TO_GENERATE_A_RANDOM_NUMBER_10);
+            int firstRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
+            int stepBetweenNumbers = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_5);
+            int randomSkippedNumber = getRandomNumber(0, GENERATE_A_RANDOM_NUMBER_10);
 
             for (int j = 0; j < STRING_LENGTH; j++) {
                 if (j == randomSkippedNumber) {
