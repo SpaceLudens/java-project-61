@@ -23,16 +23,16 @@ public class Calc {
         return result;
     }
     public static void game() {
-        String[][] questionsAndCorrectAnswers = new String[3][2];
-        int starRandom_1 = 1;
-        int endRandom_100 = 100;
-
+        int arraysCount = 3;
+        int arraysLength = 1;
+        int randomMinValue1 = 1;
+        int randomMaxValue100 = 100;
+        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
-            int firstRandomNumber = getRandomNumber(starRandom_1, endRandom_100);
-            int secondRandomNumber = getRandomNumber(starRandom_1, endRandom_100);
+            int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
             char randomOperator = generateRandomOperator();
             int expressionResult = calculateExpression(firstRandomNumber, secondRandomNumber, randomOperator);
-
             for (int j = 0; j < questionsAndCorrectAnswers.length - 2; j++) {
                 questionsAndCorrectAnswers[i][j] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
                 questionsAndCorrectAnswers[i][j + 1] = String.valueOf(expressionResult);

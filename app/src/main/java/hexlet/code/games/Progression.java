@@ -17,14 +17,14 @@ public class Progression {
     }
     public static void game() {
         String[][] questionsAndCorrectAnswers = new String[3][2];
-        int startRandom_1 = 1;
-        int endRandom_100 = 100;
-        int endRandom_9 = 9;
-        int endRandom_5 = 5;
+        int randomMinValue1 = 1;
+        int randomMaxValue100 = 100;
+        int randomMaxValue9 = 9;
+        int randomMaxValue5 = 5;
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
-            int start = getRandomNumber(startRandom_1, endRandom_100);
-            int step = getRandomNumber(startRandom_1, endRandom_5);
-            int skippedIndex = getRandomNumber(0, endRandom_9);
+            int start = getRandomNumber(randomMinValue1, randomMaxValue100);
+            int step = getRandomNumber(randomMinValue1, randomMaxValue5);
+            int skippedIndex = getRandomNumber(0, randomMaxValue9);
             String question = "";
             String answer = "";
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
