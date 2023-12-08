@@ -4,40 +4,44 @@ import java.util.Scanner;
 
 
 public class Engine {
-    private static String username;
+    private static String userName;
     private static final int ROUNDS_COUNT = 3;
-    private static final Scanner SCANNER = new Scanner(System.in);
-    public static final int GENERATE_A_RANDOM_NUMBER_1 = 1;
-    public static final int GENERATE_A_RANDOM_NUMBER_4 = 4;
-    public static final int GENERATE_A_RANDOM_NUMBER_5 = 5;
-    public static final int GENERATE_A_RANDOM_NUMBER_10 = 10;
-    public static final int GENERATE_A_RANDOM_NUMBER_100 = 100;
+    public static void gameLauncher(String gameRule, String[][] questionAndUserAnswer) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("""
+                Welcome to the Brain Games!
+                May I have your name?\s""");
+        setUserName(scanner.nextLine());
+        System.out.println("Hello, " + userName + "!" + "\n" + gameRule);
 
+        for (int i = 0; i < 3; i++) {
 
-    public static void gameLauncher(String gameRule, String[] question, String[] userAnswer) {
-        Cli.acquaintance();
-        System.out.println(gameRule);
-        for (int i = 0; i < getRoundsCount();) {
-            System.out.print("Question: " + question[i] + "\nYour answer: ");
-            var answer = SCANNER.next();
-            if (answer.equals(userAnswer[i])) {
-                System.out.println("Correct!");
-                i++;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
-                        + userAnswer[i] + "'." + " Let's try again, " + getUserName() + "!");
-                break;
-            }
-            if (i == getRoundsCount()) {
-                System.out.println("Congratulations, " + getUserName() + "!");
+            for (int j = 0; j < 1; j++) {
+
+                System.out.print("Question: " + questionAndUserAnswer[i][j] + "\nYour answer: ");
+
+                var answer = scanner.next();
+
+                if (answer.equals(questionAndUserAnswer[i][j + 1])) {
+                    System.out.println("Correct!");
+                } else {
+                    System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
+                            + questionAndUserAnswer[i][j + 1] + "'." + " Let's try again, " + getUserName() + "!");
+                    i = 3;
+                    break;
+                }
+
+                if (i == 2) {
+                    System.out.println("Congratulations, " + getUserName() + "!");
+                }
             }
         }
     }
     public static void setUserName(String name) {
-        Engine.username = name;
+        Engine.userName = name;
     }
     public static String getUserName() {
-        return username;
+        return userName;
     }
     public static int getRoundsCount() {
         return ROUNDS_COUNT;

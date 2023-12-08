@@ -1,43 +1,43 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_1;
-import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_4;
-import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_100;
+
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Calc {
     private static final String GAME_RULE = "What is the result of the expression?";
-    private static final String[] QUESTIONS = new String[getRoundsCount()];
-    private static final String[] CORRECT_ANSWERS = new String[getRoundsCount()];
-    private static final int VAR_1 = 1;
-    private static final int VAR_2 = 2;
-    private static final int VAR_3 = 3;
-    public static String[] getQuestions() {
-        return QUESTIONS;
+    public static char generateRandomOperator() {
+        char[] operators = {'+', '-', '*'};
+        int randomIndex = getRandomNumber(0, operators.length);
+        return operators[randomIndex];
     }
-
-    public static String[] getCorrectAnswers() {
-        return CORRECT_ANSWERS;
+    public static int calculateExpression(int num1, int num2, char operator) {
+        int result = 0;
+        if (operator == '+') {
+            result = num1 + num2;
+        } else if (operator == '-') {
+            result =  num1 - num2;
+        } else if (operator == '*') {
+            result =  num1 * num2;
+        }
+        return result;
     }
-
     public static void game() {
-        for (int i = 0; i < getRoundsCount(); i++) {
-            int rand = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_4);
-            int firstRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
-            int secondRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
-            if (rand == VAR_1) {
-                getQuestions()[i] = firstRandomNumber + " + " + secondRandomNumber;
-                getCorrectAnswers()[i] = String.valueOf(firstRandomNumber + secondRandomNumber);
-            } else if (rand == VAR_2) {
-                getQuestions()[i] = firstRandomNumber + " - " + secondRandomNumber;
-                getCorrectAnswers()[i] = String.valueOf(firstRandomNumber - secondRandomNumber);
-            } else if (rand == VAR_3) {
-                getQuestions()[i] = firstRandomNumber + " * " + secondRandomNumber;
-                getCorrectAnswers()[i] = String.valueOf(firstRandomNumber * secondRandomNumber);
+        String[][] questionsAndCorrectAnswers = new String[3][2];
+        int starRandom_1 = 1;
+        int endRandom_100 = 100;
+
+        for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
+            int firstRandomNumber = getRandomNumber(starRandom_1, endRandom_100);
+            int secondRandomNumber = getRandomNumber(starRandom_1, endRandom_100);
+            char randomOperator = generateRandomOperator();
+            int expressionResult = calculateExpression(firstRandomNumber, secondRandomNumber, randomOperator);
+
+            for (int j = 0; j < questionsAndCorrectAnswers.length - 2; j++) {
+                questionsAndCorrectAnswers[i][j] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
+                questionsAndCorrectAnswers[i][j + 1] = String.valueOf(expressionResult);
             }
         }
-        gameLauncher(GAME_RULE, getQuestions(), getCorrectAnswers());
+        gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }
 }

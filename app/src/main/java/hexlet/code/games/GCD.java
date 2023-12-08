@@ -1,29 +1,17 @@
 package hexlet.code.games;
 
 import static hexlet.code.Engine.gameLauncher;
-import static hexlet.code.Engine.getRoundsCount;
-import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_1;
-import static hexlet.code.Engine.GENERATE_A_RANDOM_NUMBER_100;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class GCD {
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
-    private static final String[] QUESTIONS = new String[getRoundsCount()];
-    private static final String[] CORRECT_ANSWERS = new String[getRoundsCount()];
-    public static String[] getQuestions() {
-        return QUESTIONS;
-    }
-
-    public static String[] getCorrectAnswers() {
-        return CORRECT_ANSWERS;
-    }
-    public static String gcd(int firstNumber, int secondNumber) {
+    public static int gcd(int firstNumber, int secondNumber) {
         int remainder;
         boolean swap = true;
-        String gcd = "1";
+        int gcd = 0;
         while (swap) {
             if (firstNumber % secondNumber == 0) {
-                gcd = String.valueOf(secondNumber);
+                gcd = secondNumber;
                 swap = false;
             } else {
                 remainder = firstNumber % secondNumber;
@@ -34,14 +22,23 @@ public class GCD {
         return gcd;
     }
     public static void game() {
-        for (int i = 0; i < getRoundsCount(); i++) {
-            int firstRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
-            int secondRandomNumber = getRandomNumber(GENERATE_A_RANDOM_NUMBER_1, GENERATE_A_RANDOM_NUMBER_100);
-            int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
-            int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
-            getQuestions()[i] = firstRandomNumber + " " + secondRandomNumber;
-            getCorrectAnswers()[i] = gcd(largerNumber, lowerNumber);
+        String[][] questionsAndCorrectAnswers = new String[3][2];
+        int startRandom_1 = 1;
+        int endRandom_100 = 100;
+        for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
+            for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
+                int firstRandomNumber = getRandomNumber(startRandom_1, endRandom_100);
+                int secondRandomNumber = getRandomNumber(startRandom_1, endRandom_100);
+                int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
+                int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
+                questionsAndCorrectAnswers[i][j] = firstRandomNumber + " " + secondRandomNumber;
+                questionsAndCorrectAnswers[i][j+1] = String.valueOf(gcd(largerNumber, lowerNumber));
+            }
         }
-        gameLauncher(GAME_RULE, getQuestions(), getCorrectAnswers());
+        gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
+    }
+
+    public static void main(String[] args) {
+        game();
     }
 }
