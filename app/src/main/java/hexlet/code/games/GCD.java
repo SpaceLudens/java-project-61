@@ -22,9 +22,11 @@ public class GCD {
         return gcd;
     }
     public static void game() {
-        String[][] questionsAndCorrectAnswers = new String[3][2];
+        final int arraysCount = 3;
+        final int arraysLength = 2;
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
+        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
                 int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);

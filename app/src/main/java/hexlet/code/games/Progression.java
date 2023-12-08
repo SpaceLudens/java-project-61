@@ -22,6 +22,7 @@ public class Progression {
         final int randomMaxValue100 = 100;
         final int randomMaxValue9 = 9;
         final int randomMaxValue5 = 5;
+        final int progressionLength = 10;
         String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             int start = getRandomNumber(randomMinValue1, randomMaxValue100);
@@ -30,7 +31,7 @@ public class Progression {
             String question = "";
             String answer = "";
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
-                var progression = (progression(start, step, 10));
+                var progression = (progression(start, step, progressionLength));
                 for (int k = 0; k < progression.length; k++) {
                     if (k == skippedIndex) {
                         answer = progression[k];

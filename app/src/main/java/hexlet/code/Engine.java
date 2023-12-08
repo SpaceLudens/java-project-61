@@ -14,7 +14,7 @@ public class Engine {
         setUserName(scanner.nextLine());
         System.out.println("Hello, " + userName + "!" + "\n" + gameRule);
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < getRoundsCount(); i++) {
 
             for (int j = 0; j < 1; j++) {
 
@@ -27,7 +27,7 @@ public class Engine {
                 } else {
                     System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
                             + questionAndUserAnswer[i][j + 1] + "'." + " Let's try again, " + getUserName() + "!");
-                    i = 3;
+                    i = getRoundsCount();
                     break;
                 }
 
