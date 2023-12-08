@@ -24,7 +24,7 @@ public class Calc {
     }
     public static void game() {
         int arraysCount = 3;
-        int arraysLength = 1;
+        int arraysLength = 2;
         int randomMinValue1 = 1;
         int randomMaxValue100 = 100;
         String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
