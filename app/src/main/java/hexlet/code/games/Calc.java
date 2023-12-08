@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-
 import static hexlet.code.Engine.gameLauncher;
 import static hexlet.code.RandomNumbers.getRandomNumber;
 
@@ -23,14 +22,14 @@ public class Calc {
         return result;
     }
     public static void game() {
-        int arraysCount = 3;
-        int arraysLength = 2;
-        int randomMinValue1 = 1;
-        int randomMaxValue100 = 100;
-        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
+        final int ARRAYS_COUNT = 3;
+        final int ARRAYS_LENGTH  = 2;
+        final int RANDOM_MIN_VALUE_1 = 1;
+        final int RANDOM_MAX_VALUE_100 = 100;
+        String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
-            int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
-            int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            int firstRandomNumber = getRandomNumber(RANDOM_MIN_VALUE_1, RANDOM_MAX_VALUE_100);
+            int secondRandomNumber = getRandomNumber(RANDOM_MIN_VALUE_1, RANDOM_MAX_VALUE_100);
             char randomOperator = generateRandomOperator();
             int expressionResult = calculateExpression(firstRandomNumber, secondRandomNumber, randomOperator);
             for (int j = 0; j < questionsAndCorrectAnswers.length - 2; j++) {
