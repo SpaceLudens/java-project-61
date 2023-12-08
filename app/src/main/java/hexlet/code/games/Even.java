@@ -11,13 +11,13 @@ public class Even {
     }
     public static void game() {
         String[][] questionsAndCorrectAnswers = new String[3][2];
-        int startRandom_1 = 1;
-        int endRandom_100 = 100;
+        final int randomMinValue1 = 1;
+        final int randomMaxValue100 = 100;
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
-                int randomNumber = getRandomNumber(startRandom_1, endRandom_100);
+                int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
                 questionsAndCorrectAnswers[i][j] = String.valueOf(randomNumber);
-                questionsAndCorrectAnswers[i][j+1] = isEven(randomNumber) ? "yes" : "no";
+                questionsAndCorrectAnswers[i][j + 1] = isEven(randomNumber) ? "yes" : "no";
             }
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);

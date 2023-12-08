@@ -5,7 +5,7 @@ import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Progression {
     private static final String GAME_RULE = "What number is missing in the progression?";
-    public static String[] progression (int start, int step, int length) {
+    public static String[] progression(int start, int step, int length) {
         var progression = new String[length];
         for (int i = 0; i < progression.length; i++) {
             int currentElement;
@@ -16,11 +16,13 @@ public class Progression {
         return progression;
     }
     public static void game() {
-        String[][] questionsAndCorrectAnswers = new String[3][2];
-        int randomMinValue1 = 1;
-        int randomMaxValue100 = 100;
-        int randomMaxValue9 = 9;
-        int randomMaxValue5 = 5;
+        final int arraysCount = 3;
+        final int arraysLength = 2;
+        final int randomMinValue1 = 1;
+        final int randomMaxValue100 = 100;
+        final int randomMaxValue9 = 9;
+        final int randomMaxValue5 = 5;
+        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             int start = getRandomNumber(randomMinValue1, randomMaxValue100);
             int step = getRandomNumber(randomMinValue1, randomMaxValue5);
@@ -30,7 +32,7 @@ public class Progression {
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
                 var progression = (progression(start, step, 10));
                 for (int k = 0; k < progression.length; k++) {
-                    if(k == skippedIndex) {
+                    if (k == skippedIndex) {
                         answer = progression[k];
                         question += ".. ";
                         continue;

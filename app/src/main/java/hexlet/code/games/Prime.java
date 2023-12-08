@@ -24,12 +24,14 @@ public class Prime {
         return isPrime;
     }
     public static void game() {
-        String[][] questionsAndCorrectAnswers = new String[3][2];
-        int randMinValue_1 = 1;
-        int randMaxValue_100 = 100;
+        final int arraysCount = 3;
+        final int arraysLength = 2;
+        final int randomMinValue1 = 1;
+        final int randomMaxValue100 = 100;
+        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < getRoundsCount(); i++) {
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
-                int randomNumber = getRandomNumber(randMinValue_1, randMaxValue_100);
+                int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
                 questionsAndCorrectAnswers[i][j] = String.valueOf(randomNumber);
                 questionsAndCorrectAnswers[i][j + 1] = isPrime(randomNumber) ? "yes" : "no";
             }
