@@ -15,25 +15,18 @@ public class Engine {
         System.out.println("Hello, " + userName + "!" + "\n" + gameRule);
 
         for (int i = 0; i < getRoundsCount(); i++) {
-
-            for (int j = 0; j < 1; j++) {
-
-                System.out.print("Question: " + questionAndUserAnswer[i][j] + "\nYour answer: ");
-
-                var answer = scanner.next();
-
-                if (answer.equals(questionAndUserAnswer[i][j + 1])) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
-                            + questionAndUserAnswer[i][j + 1] + "'." + " Let's try again, " + getUserName() + "!");
-                    i = getRoundsCount();
-                    break;
-                }
-
-                if (i == 2) {
-                    System.out.println("Congratulations, " + getUserName() + "!");
-                }
+            System.out.print("Question: " + questionAndUserAnswer[i][0] + "\nYour answer: ");
+            var answer = scanner.next();
+            if (answer.equals(questionAndUserAnswer[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. " + "Correct answer was '"
+                                   + questionAndUserAnswer[i][1] + "'." + " Let's try again, " + getUserName() + "!");
+                i = getRoundsCount();
+                break;
+            }
+            if (i == 2) {
+                System.out.println("Congratulations, " + getUserName() + "!");
             }
         }
     }

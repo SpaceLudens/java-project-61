@@ -16,11 +16,9 @@ public class Even {
         final int randomMaxValue100 = 100;
         String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
-            for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
-                int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
-                questionsAndCorrectAnswers[i][j] = String.valueOf(randomNumber);
-                questionsAndCorrectAnswers[i][j + 1] = isEven(randomNumber) ? "yes" : "no";
-            }
+            int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            questionsAndCorrectAnswers[i][0] = String.valueOf(randomNumber);
+            questionsAndCorrectAnswers[i][1] = isEven(randomNumber) ? "yes" : "no";
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }

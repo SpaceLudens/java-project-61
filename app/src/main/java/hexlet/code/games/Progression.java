@@ -15,6 +15,27 @@ public class Progression {
         }
         return progression;
     }
+    public static String replacingAnElementInAProgression(String[] array, int index) {
+        StringBuilder alteredProgression = new StringBuilder ();
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                alteredProgression.append (".. ");
+                continue;
+            }
+            alteredProgression.append (array[i]).append (" ");
+        }
+        return alteredProgression.toString ();
+    }
+    public static String getTheReplacedItem(String[] array, int index) {
+        String replacedItem = "";
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                replacedItem = array[i];
+            }
+        }
+        return replacedItem;
+    }
+
     public static void game() {
         final int arraysCount = 3;
         final int arraysLength = 2;
@@ -28,20 +49,12 @@ public class Progression {
             int start = getRandomNumber(randomMinValue1, randomMaxValue100);
             int step = getRandomNumber(randomMinValue1, randomMaxValue5);
             int skippedIndex = getRandomNumber(0, randomMaxValue9);
-            String question = "";
-            String answer = "";
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
                 var progression = (progression(start, step, progressionLength));
-                for (int k = 0; k < progression.length; k++) {
-                    if (k == skippedIndex) {
-                        answer = progression[k];
-                        question += ".. ";
-                        continue;
-                    }
-                    question += progression[k] + " ";
-                }
-                questionsAndCorrectAnswers[i][j] = question;
-                questionsAndCorrectAnswers[i][j + 1] = answer;
+                var replacedItem = getTheReplacedItem (progression, skippedIndex);
+                var alteredProgression = replacingAnElementInAProgression (progression, skippedIndex);
+                questionsAndCorrectAnswers[i][0] = alteredProgression;
+                questionsAndCorrectAnswers[i][1] = replacedItem;
             }
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);

@@ -11,14 +11,13 @@ public class Calc {
         return operators[randomIndex];
     }
     public static int calculateExpression(int num1, int num2, char operator) {
-        int result = 0;
-        if (operator == '+') {
-            result = num1 + num2;
-        } else if (operator == '-') {
-            result =  num1 - num2;
-        } else if (operator == '*') {
-            result =  num1 * num2;
-        }
+        int result;
+        result = switch (operator) {
+            case '+' -> num1 + num2;
+            case '-' -> num1 - num2;
+            case '*' -> num1 * num2;
+            default -> 0;
+        };
         return result;
     }
     public static void game() {
@@ -32,10 +31,8 @@ public class Calc {
             int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
             char randomOperator = generateRandomOperator();
             int expressionResult = calculateExpression(firstRandomNumber, secondRandomNumber, randomOperator);
-            for (int j = 0; j < questionsAndCorrectAnswers.length - 2; j++) {
-                questionsAndCorrectAnswers[i][j] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
-                questionsAndCorrectAnswers[i][j + 1] = String.valueOf(expressionResult);
-            }
+                questionsAndCorrectAnswers[i][0] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
+                questionsAndCorrectAnswers[i][1] = String.valueOf(expressionResult);
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }
