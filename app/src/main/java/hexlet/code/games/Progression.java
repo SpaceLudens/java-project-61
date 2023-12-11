@@ -31,7 +31,7 @@ public class Progression {
             int step = getRandomNumber(randomMinValue1, randomMaxValue5);
             int skippedIndex = getRandomNumber(0, randomMaxValue9);
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
-                String[] progression = (progression(start, step, progressionLength));
+                String[] progression = progression(start, step, progressionLength);
                 String replacedItem = progression[skippedIndex];
                 progression[skippedIndex] = "..";
                 String alteredProgression = String.join(" ", progression);
