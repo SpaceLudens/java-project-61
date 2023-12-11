@@ -31,12 +31,10 @@ public class Prime {
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
         String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
-
         for (int i = 0; i < getRoundsCount(); i++) {
-                int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
-                questionsAndCorrectAnswers[i][0] = String.valueOf(randomNumber);
-                questionsAndCorrectAnswers[i][1] = isPrime(randomNumber) ? "yes" : "no";
-
+            int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            questionsAndCorrectAnswers[i][0] = String.valueOf(randomNumber);
+            questionsAndCorrectAnswers[i][1] = isPrime(randomNumber) ? "yes" : "no";
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }

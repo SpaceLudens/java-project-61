@@ -29,14 +29,13 @@ public class GCD {
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
         String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
-
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
-                int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
-                int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
-                int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
-                int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
-                questionsAndCorrectAnswers[i][0] = firstRandomNumber + " " + secondRandomNumber;
-                questionsAndCorrectAnswers[i][1] = String.valueOf(gcd(largerNumber, lowerNumber));
+            int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
+            int largerNumber = Math.max(firstRandomNumber, secondRandomNumber);
+            int lowerNumber = Math.min(firstRandomNumber, secondRandomNumber);
+            questionsAndCorrectAnswers[i][0] = firstRandomNumber + " " + secondRandomNumber;
+            questionsAndCorrectAnswers[i][1] = String.valueOf(gcd(largerNumber, lowerNumber));
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }

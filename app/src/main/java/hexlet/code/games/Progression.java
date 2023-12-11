@@ -21,15 +21,15 @@ public class Progression {
     }
 
     private static String replacingAnElementInAProgression(String[] array, int index) {
-        StringBuilder alteredProgression = new StringBuilder ();
+        StringBuilder alteredProgression = new StringBuilder();
         for (int i = 0; i < array.length; i++) {
             if (i == index) {
-                alteredProgression.append (".. ");
+                alteredProgression.append(".. ");
                 continue;
             }
-            alteredProgression.append (array[i]).append (" ");
+            alteredProgression.append(array[i]).append(" ");
         }
-        return alteredProgression.toString ();
+        return alteredProgression.toString();
     }
 
     private static String getTheReplacedItem(String[] array, int index) {
@@ -53,11 +53,10 @@ public class Progression {
             int start = getRandomNumber(randomMinValue1, randomMaxValue100);
             int step = getRandomNumber(randomMinValue1, randomMaxValue5);
             int skippedIndex = getRandomNumber(0, randomMaxValue9);
-
             for (int j = 0; j < questionsAndCorrectAnswers[i].length - 1; j++) {
                 String[] progression = (progression(start, step, progressionLength));
-                String replacedItem = getTheReplacedItem (progression, skippedIndex);
-                String alteredProgression = replacingAnElementInAProgression (progression, skippedIndex);
+                String replacedItem = getTheReplacedItem(progression, skippedIndex);
+                String alteredProgression = replacingAnElementInAProgression(progression, skippedIndex);
                 questionsAndCorrectAnswers[i][0] = alteredProgression;
                 questionsAndCorrectAnswers[i][1] = replacedItem;
             }

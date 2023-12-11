@@ -27,7 +27,7 @@ public class App {
         String gameNumber = scanner.next();
 
         switch (gameNumber) {
-            case "1" -> Cli.acquaintance();
+            case "1" -> Cli.getAcquaintance();
             case "2" -> Even.play();
             case "3" -> Calc.play();
             case "4" -> GCD.play();

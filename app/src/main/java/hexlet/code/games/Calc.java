@@ -29,14 +29,13 @@ public class Calc {
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
         String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
-
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
             int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
             char randomOperator = generateRandomOperator();
             int expressionResult = calculateExpression(firstRandomNumber, secondRandomNumber, randomOperator);
-                questionsAndCorrectAnswers[i][0] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
-                questionsAndCorrectAnswers[i][1] = String.valueOf(expressionResult);
+            questionsAndCorrectAnswers[i][0] = firstRandomNumber + " " + randomOperator + " " + secondRandomNumber;
+            questionsAndCorrectAnswers[i][1] = String.valueOf(expressionResult);
         }
         gameLauncher(GAME_RULE, questionsAndCorrectAnswers);
     }

@@ -9,7 +9,7 @@ public class Engine {
         System.out.print("""
                 Welcome to the Brain Games!
                 May I have your name?\s""");
-        String userName = scanner.nextLine ();
+        String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!" + "\n" + gameRule);
 
         for (int i = 0; i < getRoundsCount(); i++) {
