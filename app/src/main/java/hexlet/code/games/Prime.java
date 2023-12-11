@@ -6,8 +6,11 @@ import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class Prime {
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int ARRAYS_COUNT = 3;
+    private static final int ARRAYS_LENGTH = 2;
 
-    public static boolean isPrime(int number) {
+
+    private static boolean isPrime(int number) {
         boolean isPrime = false;
         if (number < 2) {
             return false;
@@ -23,12 +26,12 @@ public class Prime {
         }
         return isPrime;
     }
-    public static void game() {
-        final int arraysCount = 3;
-        final int arraysLength = 2;
+
+    public static void play() {
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
-        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
+        String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
+
         for (int i = 0; i < getRoundsCount(); i++) {
                 int randomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
                 questionsAndCorrectAnswers[i][0] = String.valueOf(randomNumber);

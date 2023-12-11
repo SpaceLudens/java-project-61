@@ -28,11 +28,11 @@ public class App {
 
         switch (gameNumber) {
             case "1" -> Cli.acquaintance();
-            case "2" -> Even.game();
-            case "3" -> Calc.game();
-            case "4" -> GCD.game();
-            case "5" -> Progression.game();
-            case "6" -> Prime.game();
+            case "2" -> Even.play();
+            case "3" -> Calc.play();
+            case "4" -> GCD.play();
+            case "5" -> Progression.play();
+            case "6" -> Prime.play();
             default -> {
             }
         }

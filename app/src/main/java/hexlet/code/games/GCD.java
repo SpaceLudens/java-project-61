@@ -5,7 +5,10 @@ import static hexlet.code.RandomNumbers.getRandomNumber;
 
 public class GCD {
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
-    public static int gcd(int firstNumber, int secondNumber) {
+    private static final int ARRAYS_COUNT = 3;
+    private static final int ARRAYS_LENGTH = 2;
+
+    private static int gcd(int firstNumber, int secondNumber) {
         int remainder;
         boolean swap = true;
         int gcd = 0;
@@ -21,12 +24,12 @@ public class GCD {
         }
         return gcd;
     }
-    public static void game() {
-        final int arraysCount = 3;
-        final int arraysLength = 2;
+
+    public static void play() {
         final int randomMinValue1 = 1;
         final int randomMaxValue100 = 100;
-        String[][] questionsAndCorrectAnswers = new String[arraysCount][arraysLength];
+        String[][] questionsAndCorrectAnswers = new String[ARRAYS_COUNT][ARRAYS_LENGTH];
+
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
                 int firstRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
                 int secondRandomNumber = getRandomNumber(randomMinValue1, randomMaxValue100);
