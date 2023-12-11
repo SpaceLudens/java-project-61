@@ -13,9 +13,8 @@ public class Prime {
     private static boolean isPrime(int number) {
         boolean isPrime = false;
         if (number < 2) {
-            return false;
+            return isPrime;
         }
-
         for (int j = 2; j <= number; j++) {
             if (number % j == 0 && number != j) {
                 isPrime = false;
